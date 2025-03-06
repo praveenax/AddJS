@@ -40,7 +40,8 @@ To change the delimiter, the beginning of the string will contain a separate lin
     npm test
 ```
 
-Final Test Report: 
+## Final Test Report: 
+
 ![image](https://github.com/user-attachments/assets/904bfb40-0ce4-4664-8e9c-ad49cfdf4062)
 
 
