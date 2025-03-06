@@ -32,6 +32,8 @@ To change the delimiter, the beginning of the string will contain a separate lin
 
 8. Allow multiple delimiters like this: “//[delim1][delim2]\n” for example “//[\*][%]\n1\*2%3” should return 6.
 
+9. make sure you can also handle multiple delimiters with length longer than one char
+
 ## How to run:
 
 ```
