@@ -1,0 +1,28 @@
+{
+  "name": "addjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "stringCalc.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      [
+        "jest-html-reporter",
+        {
+          "pageTitle": "Test Report",
+          "outputPath": "./test-report.html",
+          "openReport": true
+        }
+      ]
+    ]
+  },
+  "author": "praveenax",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-html-reporter": "^4.0.1"
+  }
+}
