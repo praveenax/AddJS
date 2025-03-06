@@ -4,7 +4,7 @@ function addNumbers(input) {
   if (!input) return 0;
 
   // Seperated by comma `,`
-  let delimiters = [","];
+  let delimiters = [",", "\n"];
 
   const regex = new RegExp(`[${delimiters.join("")}]`);
   const numbers = input
