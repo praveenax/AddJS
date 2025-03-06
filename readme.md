@@ -28,6 +28,8 @@ To change the delimiter, the beginning of the string will contain a separate lin
 
 6. Numbers bigger than 1000 should be ignored, so adding 2 + 1001 = 2
 
+7. Delimiters can be of any length with the following format: “//[delimiter]\n” for example: “//[***]\n1**_2_**3” should return 6
+
 ## How to run:
 
 ```

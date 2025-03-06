@@ -19,12 +19,22 @@ describe("String Calculator - addNumbers", () => {
     test("handles newline as delimiter", () => {
       expect(addNumbers("1\n2,3")).toBe(6);
     });
+
     test("handles custom delimiter", () => {
+      console.log(addNumbers("//;\n1;2;3"));
       expect(addNumbers("//;\n1;2;3")).toBe(6);
     });
 
+    test("handles multi-character delimiter", () => {
+      expect(addNumbers("//[***]\n1***2***3")).toBe(6);
+    });
+
     test("handles multiple custom delimiters", () => {
-      expect(addNumbers("//#\n1#2#3")).toBe(6);
+      expect(addNumbers("//[*][%]\n1*2%3")).toBe(6);
+    });
+
+    test("handles multiple multi-character delimiters", () => {
+      expect(addNumbers("//[***][###]\n1***2###3")).toBe(6);
     });
   });
 

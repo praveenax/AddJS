@@ -1,5 +1,9 @@
 // stringCalc.js
 
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function addNumbers(input) {
   if (!input) return 0;
 
@@ -9,11 +13,19 @@ function addNumbers(input) {
   // Check for custom delimiter (e.g., `//;\n1;2;3`)
   const customDelimiterMatch = input.match(/^\/\/(.+)\n/);
   if (customDelimiterMatch) {
-    delimiters.push(customDelimiterMatch[1]); // Add custom delimiter
-    input = input.split("\n").slice(1).join("\n"); // Remove delimiter declaration
+    let delimiterSection = customDelimiterMatch[1]; // Extract delimiter(s)
+    input = input.split("\n").slice(1).join("\n");
+
+    if (delimiterSection.startsWith("[") && delimiterSection.endsWith("]")) {
+      delimiters = delimiterSection
+        .match(/\[(.*?)\]/g)
+        .map((d) => d.slice(1, -1));
+    } else {
+      delimiters = [delimiterSection];
+    }
   }
 
-  const regex = new RegExp(`[${delimiters.join("")}]`);
+  const regex = new RegExp(delimiters.map((d) => escapeRegExp(d)).join("|"));
   const numbers = input
     .split(regex)
     .map((num) => num.trim())
