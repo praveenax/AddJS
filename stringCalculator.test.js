@@ -34,5 +34,9 @@ describe("String Calculator - addNumbers", () => {
         "Negatives not allowed: -2, -4"
       );
     });
+
+    test("ignores numbers gt 1000", () => {
+      expect(addNumbers("2,1001,3")).toBe(5);
+    });
   });
 });
