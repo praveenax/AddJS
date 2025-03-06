@@ -27,7 +27,8 @@ function addNumbers(input) {
     throw new Error(`Negatives not allowed: ${negatives.join(", ")}`);
   }
 
-  return parsedNumbers.reduce((sum, num) => sum + num, 0);
+  // Sum valid numbers (ignore numbers > 1000)
+  return parsedNumbers.reduce((sum, num) => (num <= 1000 ? sum + num : sum), 0);
 }
 
 module.exports = addNumbers;

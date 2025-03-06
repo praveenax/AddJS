@@ -28,9 +28,11 @@ describe("String Calculator - addNumbers", () => {
     });
   });
 
-  test("throws error for negative numbers", () => {
-    expect(() => addNumbers("1,-2,3,-4")).toThrow(
-      "Negatives not allowed: -2, -4"
-    );
+  describe("Handling Edge cases", () => {
+    test("throws error for negative numbers", () => {
+      expect(() => addNumbers("1,-2,3,-4")).toThrow(
+        "Negatives not allowed: -2, -4"
+      );
+    });
   });
 });
