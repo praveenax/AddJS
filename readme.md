@@ -30,6 +30,8 @@ To change the delimiter, the beginning of the string will contain a separate lin
 
 7. Delimiters can be of any length with the following format: “//[delimiter]\n” for example: “//[***]\n1**_2_**3” should return 6
 
+8. Allow multiple delimiters like this: “//[delim1][delim2]\n” for example “//[\*][%]\n1\*2%3” should return 6.
+
 ## How to run:
 
 ```
