@@ -21,6 +21,12 @@ function addNumbers(input) {
 
   const parsedNumbers = numbers.map(Number);
 
+  // Throw an error if negatives are present
+  const negatives = parsedNumbers.filter((n) => n < 0);
+  if (negatives.length) {
+    throw new Error(`Negatives not allowed: ${negatives.join(", ")}`);
+  }
+
   return parsedNumbers.reduce((sum, num) => sum + num, 0);
 }
 
